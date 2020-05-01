@@ -1,0 +1,3 @@
+[submodule "dockerizando_rails"]
+	path = dockerizando_rails
+	url = ./dockerizando_rails

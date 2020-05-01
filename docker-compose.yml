@@ -1,0 +1,22 @@
+version: '3'
+
+services: 
+  rails:
+    build: .
+    image: jacksonpires/ubuntu-rails-ssh
+    volumes: 
+      - .:/projects
+    ports: 
+      - "3000"
+      - "22"
+    depends_on: 
+      - db
+  db:
+    image: postgres
+    restart: always
+    environment: 
+      POSTGRES_PASSWORD: root
+    volumes: 
+      - ./postgres:/var/lib/postgres/data
+    ports: 
+      - "5432"
